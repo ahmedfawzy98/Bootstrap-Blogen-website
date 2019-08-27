@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Blogen</title>
+</head>
+<body>
+<!--  START HERE -->
+<!-- NAVIGATION SECTION-->
+<div id="main-nav"></div>
+<!-- HEADER SECTION-->
+<section id="header-section" class="py-2 bg-primary text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1><i class="fa fa-user"></i> Edit Profile</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BUTTONS SECTION-->
+<section id="buttons-section" class="py-4 mb-4 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <a href="index.html" class="btn btn-light btn-block">
+                    <i class="fa fa-arrow-left"></i> Back To Dashboard
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-success btn-block">
+                    <i class="fa fa-lock"></i> Change Password
+                </a>
+            </div>
+            <div class="col-md-3">
+                <a href="#" class="btn btn-danger btn-block">
+                    <i class="fa fa-trash"></i> Delete Account
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TABLE SECTION-->
+<section id="table-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Edit Profile</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control mb-3" value="Brad Traversy">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control mb-3" value="test@test.com">
+                            <label for="bio">Bio</label>
+                            <textarea name="editor1"class="form-control">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab autem consectetur corporis, fugit laboriosam mollitia nam neque nisi nulla obcaecati, omnis provident quidem saepe tempora velit voluptatum? Quia, reprehenderit!</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <h3>Your Avatar</h3>
+                <img src="images/avatar.png" alt="" class="img-fluid mb-3">
+                <button class="btn btn-primary btn-block">Edit Image</button>
+                <button class="btn btn-danger btn-block">Delete Image</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER SECTION-->
+<div id="main-footer"></div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+<script>
+    //load navbar and footer
+    $('#main-nav').load('index.html #main-nav', function () {
+        $('.nav-item.active').removeClass('active');
+    });
+    $('#main-footer').load('index.html #main-footer', function () {
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+    });
+
+    CKEDITOR.replace( 'editor1' );
+</script>
+
+</body>
+</html>
